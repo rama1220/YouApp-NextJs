@@ -18,8 +18,9 @@ const AuthProvider = ({ children }) => {
         username: username1,
         password: password1,
       });
-      const { email } = JSON.parse(response.config.data);
+      const { email, username } = JSON.parse(response.config.data);
       localStorage.setItem("email", email);
+      localStorage.setItem("username", username);
       window.location.href = "/login";
       console.log(response);
       return response;

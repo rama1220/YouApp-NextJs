@@ -114,7 +114,6 @@ export default function BoxAbout({ title, paragraph }) {
 
   const handleSignOut = () => {
     localStorage.removeItem("access_token");
-    localStorage.removeItem("username");
   };
 
   return (
