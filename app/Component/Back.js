@@ -1,7 +1,7 @@
 
 import Link from "next/link"
 export default function Back({link}) {
-  console.log(link)
+
   return (
   <>
      <div className="Back flex items-center gap-2 ">

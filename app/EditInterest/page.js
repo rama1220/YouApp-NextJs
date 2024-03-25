@@ -50,7 +50,7 @@ export default function Page() {
         <Box>
           <div className="flex items-center gap-3 justify-between w-full">
             <Back link="profile" />
-            <h2 className="text-orange-300 text-2xl cursor-pointer" onClick={handleSave}>
+            <h2 className="btn-save text-orange-300 text-2xl cursor-pointer" onClick={handleSave}>
               Save
             </h2>
           </div>
