@@ -1,33 +1,102 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
-}
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
-}
-
 @layer utilities {
   .text-balance {
     text-wrap: balance;
+  }
+  html {
+    background: linear-gradient(to bottom right, #000000, #008080, #000000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+
+  main {
+    background: linear-gradient(to bottom right, #000000, #008080, #000000);
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  .Box-profile {
+    width: 50rem;
+    height: 180px;
+    border-radius: 10px;
+    background-color: rgba(61, 60, 60, 0.6);
+  }
+  .Box-biodata {
+    width: 50rem;
+    height: 150px;
+    border-radius: 10px;
+    background-color: rgba(18, 17, 17, 0.6);
+  }
+
+  .Box-biodata-edit {
+    width: 50rem;
+    height: 550px;
+    border-radius: 10px;
+    background-color: rgba(18, 17, 17, 0.6);
+  }
+
+  .content-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  .content-container.interest {
+    margin-top: 10px;
+  }
+
+  .image-profile {
+    width: 50px;
+    height: 50px;
+  }
+  .box-interestMain {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  .box-interest {
+    width: 60%;
+    height: 150px;
+  }
+  .content {
+    padding: 20px;
+    width: 100%;
+  }
+  .username {
+    font-size: 1.3rem;
+  }
+  .icon-edit svg {
+    fill: white;
+  }
+  .form-input {
+    width: 25rem;
+  }
+
+  @media screen and (max-width: 390px) {
+    .Box-profile {
+      width: 100%;
+    }
+    .Box-biodata {
+      width: 100%;
+    }
+    .container-main {
+      padding: 40px 20px 40px 20px;
+    }
+    .form-input {
+      width: 12rem;
+    }
+    .box-interest {
+      width: 90%;
+      height: 150px;
+    }
   }
 }
