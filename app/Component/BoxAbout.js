@@ -120,7 +120,7 @@ export default function BoxAbout({ title, paragraph }) {
     <>
       <div className="flex items-center gap-3 justify-between w-full">
         <div className="sing-out" onClick={handleSignOut}>
-          <Back link="/profile" />
+          <Back link="" />
         </div>
         <h2 className="username text-white  -ml-5">@{username}</h2>
         <div className="dot-side">
