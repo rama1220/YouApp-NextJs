@@ -18,10 +18,13 @@ export default function BoxAbout({ title, paragraph }) {
   });
   const [imageSrc, setImageSrc] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
-  const { CreateProfile } = useAuth();
+  const { CreateProfile, Born, Age } = useAuth();
   const router = useRouter();
 
-  console.log(imageSrc);
+  const yourBirthday = Born(formData.birthday);
+  const yourAge = Age(formData.birthday);
+
+
 
   useEffect(() => {
     const storedUsername = localStorage.getItem("username");
@@ -176,7 +179,7 @@ export default function BoxAbout({ title, paragraph }) {
                     <label htmlFor="birthday" className="text-white">
                       Birthday
                     </label>
-                    <h2 className="text-white">{formData.birthday}</h2>
+                    <h2 className="text-white">{`${yourBirthday} (Age ${yourAge})`}</h2>
                   </div>
                   <div className="flex justify-between">
                     <label htmlFor="horoscope" className="text-white">

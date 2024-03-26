@@ -63,10 +63,32 @@ const CreateProfile = async (profileData) => {
   }
 };
 
+const  Born = (date) => {
+const parts = date.split("-");
+const year = parts[0];
+const month = parts[1];
+const day = parts[2];
+return `${day}-${month}-${year}`;
+
+}
+
+const Age = (birthday) => {
+  const birth = birthday.split("-");
+  const yearOfBirth = parseInt(birth[0]);
+
+  const timestamp = Date.now();
+  const dateNow = new Date(timestamp);
+  const yearNow = dateNow.getFullYear();
+
+  return yearNow - yearOfBirth;
+};
+
   const values = {
     Register,
     Login,
-    CreateProfile
+    CreateProfile,
+    Born,
+    Age
   };
 
   return <AuthContext.Provider value={values}>{children}</AuthContext.Provider>;
