@@ -62,23 +62,17 @@ const CreateProfile = async (profileData) => {
     throw error;
   }
 };
-const Born = (date) => {
-  if (!date || typeof date !== 'string' || !date.includes("-")) {
-    return "Invalid date format";
-  }
 
-  const parts = date.split("-");
-  const year = parts[0];
-  const month = parts[1];
-  const day = parts[2];
-  return `${day}-${month}-${year}`;
-};
+const  Born = (date) => {
+const parts = date.split("-");
+const year = parts[0];
+const month = parts[1];
+const day = parts[2];
+return `${day}-${month}-${year}`;
+
+}
 
 const Age = (birthday) => {
-  if (!birthday || typeof birthday !== 'string' || !birthday.includes("-")) {
-    return "Invalid birthday format";
-  }
-
   const birth = birthday.split("-");
   const yearOfBirth = parseInt(birth[0]);
 
