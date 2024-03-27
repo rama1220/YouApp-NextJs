@@ -19,6 +19,7 @@ export default function BoxAbout({ title, paragraph }) {
   const [imageSrc, setImageSrc] = useState(null);
   const [uploadedImageUrl, setUploadedImageUrl] = useState(null);
   const { CreateProfile, Born, Age } = useAuth();
+  const [classBio, setClass] = useState("");
   const router = useRouter();
 
   const yourBirthday = Born(formData.birthday);
@@ -56,6 +57,7 @@ export default function BoxAbout({ title, paragraph }) {
 
   const handleEditBio = () => {
     setBio(false);
+    setClass("Box-biodata-edit")
   };
   useEffect(() => {
     const imageProfile = localStorage.getItem("image");
@@ -80,6 +82,7 @@ export default function BoxAbout({ title, paragraph }) {
       });
       setEditMode(true);
       setBio(true);
+      setClass('bioBox')
     }
   }, []);
 
@@ -98,6 +101,7 @@ export default function BoxAbout({ title, paragraph }) {
         localStorage.setItem("weight", formData.weight);
       }
       setBio(true);
+      setClass('bioBox')
       const height = parseFloat(formData.height);
       const weight = parseFloat(formData.weight);
 
@@ -140,7 +144,7 @@ export default function BoxAbout({ title, paragraph }) {
       </div>
       <div className="content-container">
         {editMode ? (
-          <div className={`Box-biodata-edit relative`}>
+          <div className={`${classBio} relative`}>
             <div className="content text-black absolute">
               {bio ? (
                 <div className="tag-about flex justify-between items-center text-white">
